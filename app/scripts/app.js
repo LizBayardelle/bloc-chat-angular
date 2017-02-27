@@ -14,8 +14,16 @@
         	});
     }
  
-angular.module('blocChat', ['ui.router', 'firebase']);
-    angular
-        .module('blocChat', ['ui.router', 'firebase'])
-        .config(config);
+angular
+    .module('blocChat', ['ui.router', 'firebase'])
+    .config(config, function(){
+		var config = {
+		    apiKey: "AIzaSyBT3uXK6AjicRlgAfqazh-o_xAwQvFiRwg",
+		    authDomain: "blocchat-4a6ab.firebaseapp.com",
+		    databaseURL: "https://blocchat-4a6ab.firebaseio.com",
+		    storageBucket: "blocchat-4a6ab.appspot.com",
+		    messagingSenderId: "98451881"
+		};
+		firebase.initializeApp(config);
+	});
 })();
