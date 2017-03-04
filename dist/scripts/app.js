@@ -11,6 +11,13 @@
            url: '/',
            controller: 'HomeCtrl as home',
            templateUrl: '/templates/home.html'
+      })
+
+      .state('modal', {
+      		controller: 'ModalCtrl as modal'
+      		// I assume this doesn't need a url or 
+      		// template because it's on home, but 
+      		// that could be wrong?
       });
       
     var config = {
@@ -24,6 +31,6 @@
   }
 
     angular
-      .module('blocChat', ['ui.router', 'firebase'])
+      .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap', 'ngAnimate', 'ngTouch'])
       .config(config);
 })();

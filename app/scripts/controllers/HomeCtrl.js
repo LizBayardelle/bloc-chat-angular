@@ -3,6 +3,8 @@
         var home = this;
 
         home.rooms = Room.all;
+        home.add = Room.add;
+
     }
 
     angular
