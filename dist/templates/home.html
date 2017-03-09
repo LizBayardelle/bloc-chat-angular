@@ -3,27 +3,7 @@
 		<h1>Chat Rooms</h1>
 
 		<button ng-click="home.add('bar')">Add</button>
-		<button ng-click="open()">Add New Room</button>
-
-		<div modal="showModal" close="cancel()">
-		    <div class="modal-header">
-		        <h4>Add a New Room</h4>
-		    </div>
-
-		    <div class="modal-body">
-		        Room Name: <input type="text" name="roomName"></input>
-		    </div>
-
-		    <div class="modal-footer">
-		      <button class="btn btn-success" ng-click="home.add('A Room')">Add Room</button>
-		      <!-- Ideally I'd do something like this, but I don't know how to reference the contents of the input field in a way that is...angulary?
-
-		      <button class="btn btn-success" ng-click="home.add(roomName.value)">Add Room</button> 
-		      
-		      -->
-		      <button class="btn" ng-click="cancel()">Cancel</button>
-		    </div>
-		</div>
+		<button ng-click="home.openAddRoom()">Add New Room</button>
 
 		<div ng-repeat="room in home.rooms">
 			<h3>{{ room.$value }}</h3>
@@ -34,4 +14,5 @@
 	<div class="page-content">
 		<h1 class="text-center">Future Name of Room</h1>
 	</div> <!-- page-content -->
+
 </div>

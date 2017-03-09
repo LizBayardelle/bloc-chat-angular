@@ -1,9 +1,28 @@
 (function() {
-    function HomeCtrl(Room) {
-        var home = this;
+    function HomeCtrl(Room, $uibModal, $log) {
+      var home = this;
 
-        home.rooms = Room.all;
-        home.add = Room.add;
+      home.rooms = Room.all;
+      home.add = Room.add;
+
+      home.openAddRoom = function() {
+        var modalInstance = $uibModal.open({
+          animation: home.animationsEnabled,
+          component: 'addRoomModal',
+          resolve: {
+            roomName: function () {
+              return home.roomName;
+            }
+          }
+        });
+
+        modalInstance.result.then(function (modalName) {
+          console.log(modalName);
+          Room.add(modalName);
+        }, function () {
+          $log.info('modal-component dismissed at: ' + new Date());
+        });
+      }
 
     }
 

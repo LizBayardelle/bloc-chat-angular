@@ -11,15 +11,8 @@
            url: '/',
            controller: 'HomeCtrl as home',
            templateUrl: '/templates/home.html'
-      })
-
-      .state('modal', {
-      		controller: 'ModalCtrl as modal'
-      		// I assume this doesn't need a url or 
-      		// template because it's on home, but 
-      		// that could be wrong?
       });
-      
+
     var config = {
       apiKey: "AIzaSyBT3uXK6AjicRlgAfqazh-o_xAwQvFiRwg",
       authDomain: "blocchat-4a6ab.firebaseapp.com",

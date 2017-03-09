@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Hind:400,700" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheetr" href="/styles/style.css"> -->
+    <link href="//fonts.googleapis.com/css?family=Press+Start+2P|Hind:400,700" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 	<nav>
@@ -24,24 +25,24 @@
 	<ui-view></ui-view>
 
 	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
 	<!-- AngularJS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+  	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-touch/1.6.2/angular-touch.js"></script>
 
 	<!-- Firebase -->
-	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+	<script src="//www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 
 	<!-- AngularFire -->
-	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+	<script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 	<!-- <script src="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"></script> -->
 
 	<!-- Bootstrap -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.6.2/angular-touch.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
 
 	<!-- General -->
   	<script src="/scripts/app.js"></script>
@@ -49,9 +50,9 @@
   	<!-- Home Page -->
   	<script src="/scripts/services/Room.js"></script>
   	<script src="/scripts/controllers/HomeCtrl.js"></script>
+  	
+  	<script src="/scripts/components/AddRoomModal.js"></script>
 
   	<!-- Modal -->
-  	<script src="/scripts/services/Modal.js"></script>
-  	<script src="/scripts/controllers/ModalCtrl.js"></script>
 </body>
 </html>
