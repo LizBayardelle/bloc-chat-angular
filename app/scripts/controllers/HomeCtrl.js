@@ -1,9 +1,11 @@
 (function() {
-    function HomeCtrl(Room, $uibModal, $log) {
+    function HomeCtrl(Room, $uibModal, $log, Message) {
       var home = this;
 
       home.rooms = Room.all;
       home.add = Room.add;
+
+      Message.getByRoomId(home.rooms[3])
 
       home.openAddRoom = function() {
         var modalInstance = $uibModal.open({

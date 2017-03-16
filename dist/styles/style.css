@@ -113,13 +113,40 @@ Templates: Home
 	position: relative;
 	display: inline-block;
 	height: calc(100vh - 190px);
-	width: 70%;
-	padding: 15px 30px 15px 30px;
+	width: 74%;
 	z-index: 10;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
 
+.page-content .header-stuff {
+	padding: 15px 30px 15px 30px;
+}
+
+.new-message {
+	padding: 0 30px 0 30px;
+}
+
+.new-message p {
+	margin: 0;
+}
+
+.message-line h4 {
+	color: #b01c69;
+}
+
+.new-message input {
+	width: 80%;
+	margin-right: 20px;
+	height: 40px;
+	padding-top: 0px;
+}
+
+.message-line {
+	display: block;
+	padding: 5px 30px 5px 30px;
+	width: 100%;
+}
 
 
 
