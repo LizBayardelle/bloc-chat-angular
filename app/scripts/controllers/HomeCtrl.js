@@ -5,7 +5,11 @@
       home.rooms = Room.all;
       home.add = Room.add;
 
-      Message.getByRoomId(home.rooms[3])
+
+      home.showMessages = function(roomId) {
+        home.messages = Message.messagesByRoom(roomId);
+        console.log(home.messages)
+      }
 
       home.openAddRoom = function() {
         var modalInstance = $uibModal.open({

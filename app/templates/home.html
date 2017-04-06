@@ -5,9 +5,10 @@
 		<button ng-click="home.openAddRoom()">Add New Room</button>
 
 		<div ng-repeat="room in home.rooms">
-			<h3>{{ room.$value }}</h3>
+			<h3 ng-click="home.showMessages(room.$id)">
+			{{ room.$value }}
+		</h3>
 		</div> <!-- ng repeat -->
-		<p style="padding-bottom: 30px">(The End)</p>
 	</div> <!-- left-panel -->
 
 	<div class="page-content">
@@ -21,18 +22,12 @@
 	    	</div>
     	</div> <!-- header stuff -->
 
-		<div class="message-line">
-			<h4 class="sender-name">Barack Obama
-				<small>(sent 3 seconds ago)</small>
+		<div class="message-line" ng-repeat="message in home.messages">
+			<h4 class="sender-name">
+				{{ message.username }}
+				<small>(Sent at {{ message.sentAt }} in Room {{ message.roomId }})</small>
 			</h4>
-			<p class="message-text">I know. Do you think we should go back?</p>
-		</div>
-
-		<div class="message-line">
-			<h4 class="sender-name">Michelle Obama
-				<small>(sent 6 seconds ago)</small>
-			</h4>
-			<p class="message-text">Oh no.  This looks bad.</p>
+			<p class="message-text">{{message.content}}</p>
 		</div>
 	</div> <!-- page-content -->
 
