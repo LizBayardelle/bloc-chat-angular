@@ -1,9 +1,10 @@
 (function() {
-    function HomeCtrl(Room, $uibModal, $log, Message) {
+    function HomeCtrl(Room, $uibModal, $log, Message, User) {
       var home = this;
 
       home.rooms = Room.all;
       home.add = Room.add;
+      home.currentUser = User.get();
 
 
       home.showMessages = function(roomId) {
@@ -23,7 +24,6 @@
         });
 
         modalInstance.result.then(function (modalName) {
-          console.log(modalName);
           Room.add(modalName);
         }, function () {
           $log.info('modal-component dismissed at: ' + new Date());

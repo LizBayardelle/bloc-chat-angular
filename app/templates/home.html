@@ -12,8 +12,11 @@
 	</div> <!-- left-panel -->
 
 	<div class="page-content">
+		<div class="text-right">
+			<p style="margin-top: 10px">My Username: {{ home.currentUser }}</p>
+		</div> <!-- text right for username -->
 		<div class="header-stuff">
-			<h1 class="text-center">Future Name of Room</h1>
+			<h1 class="text-center">{{ room.name }}</h1>
 
 			<div class="new-message">
 	        	<p><small>Write a new message:</small></p>
