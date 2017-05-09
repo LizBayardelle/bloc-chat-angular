@@ -1,15 +1,17 @@
 (function() {
-    function HomeCtrl(Room, $uibModal, $log, Message, User) {
+    function HomeCtrl(Room, $uibModal, $log, Message, User, $rootScope) {
       var home = this;
 
       home.rooms = Room.all;
       home.add = Room.add;
       home.currentUser = User.get();
 
+      $rootScope.$on('updateUser', function() {
+        home.currentUser = User.get();
+      });
 
       home.showMessages = function(roomId) {
         home.messages = Message.messagesByRoom(roomId);
-        console.log(home.messages)
       }
 
       home.openAddRoom = function() {

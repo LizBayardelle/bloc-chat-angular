@@ -8,21 +8,25 @@
     }
 
     function get() {
-      console.log(currentUser);
       return currentUser;
     }
 
     function set(username) {
-      $cookies.currentUser = username;
-      currentUser = $cookies.currentUser;
-      $cookies.put(currentUser, username);
-      console.log('hello', currentUser);
+      currentUser = username;
+      $cookies.put('blocChatCurrentUser', username);
+      $rootScope.$broadcast('updateUser');
+    }
+
+    function logout() {
+      $cookies.remove('blocChatCurrentUser');
+      location.reload(true);
     }
 
     return {
       initUser: initUser,
       set: set,
-      get: get
+      get: get,
+      logout: logout
     };
   }
 
