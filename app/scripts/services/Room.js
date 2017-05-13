@@ -12,9 +12,7 @@
 
     return {
       all: rooms,
-      add: addRoom,
-      get: get,
-      set: set
+      add: addRoom
     };
   }
 

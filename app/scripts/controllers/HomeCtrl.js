@@ -1,26 +1,35 @@
 (function() {
     function HomeCtrl(Room, $uibModal, $log, Message, User, $rootScope) {
-      var home = this;
+      var $ctrl = this;
 
-      home.rooms = Room.all;
-      home.add = Room.add;
-      home.currentUser = User.get();
+      $ctrl.rooms = Room.all;
+      $ctrl.add = Room.add;
+      $ctrl.currentUser = User.get();
 
       $rootScope.$on('updateUser', function() {
-        home.currentUser = User.get();
+        $ctrl.currentUser = User.get();
       });
 
-      home.showMessages = function(roomId) {
-        home.messages = Message.messagesByRoom(roomId);
+      $ctrl.changeRoom = function(room) {
+        $ctrl.currentRoom = room;
+        $ctrl.messages = Message.messagesByRoom(room.$id);
       }
 
-      home.openAddRoom = function() {
+      $ctrl.send = function() {
+        Message.send($ctrl.message, $ctrl.currentRoom.$id)
+      }
+
+      $ctrl.ok = function () {
+        $ctrl.close({$value: $ctrl.roomName});
+      };
+
+      $ctrl.openAddRoom = function() {
         var modalInstance = $uibModal.open({
-          animation: home.animationsEnabled,
+          animation: $ctrl.animationsEnabled,
           component: 'addRoomModal',
           resolve: {
             roomName: function () {
-              return home.roomName;
+              return $ctrl.roomName;
             }
           }
         });

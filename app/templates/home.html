@@ -2,10 +2,9 @@
 	<div class="left-panel">
 		<h1>Chat Rooms</h1>
 
-		<button ng-click="home.openAddRoom()">Add New Room</button>
-
-		<div ng-repeat="room in home.rooms">
-			<h3 ng-click="home.showMessages(room.$id)">
+		<button ng-click="$ctrl.openAddRoom()">Add New Room</button>
+		<div ng-repeat="room in $ctrl.rooms">
+			<h3 ng-click="$ctrl.changeRoom(room)">
 			{{ room.$value }}
 		</h3>
 		</div> <!-- ng repeat -->
@@ -13,22 +12,22 @@
 
 	<div class="page-content">
 		<div class="text-right">
-			<p style="margin-top: 10px">My Username: {{ home.currentUser }}</p>
+			<p style="margin-top: 10px">My Username: {{ $ctrl.currentUser }}</p>
 		</div> <!-- text right for username -->
 		<div class="header-stuff">
-			<h1 class="text-center">{{ room.name }}</h1>
+			<h1 class="text-center">{{ $ctrl.currentRoom.$value }}</h1>
 
 			<div class="new-message">
 	        	<p><small>Write a new message:</small></p>
-	        	<input type="text"/>
-	        	<button>Send</button>
+	        	<input ng-model="$ctrl.message" type="text" name="message"/>
+	        	<button ng-click="$ctrl.send()">Send</button>
 	    	</div>
     	</div> <!-- header stuff -->
 
-		<div class="message-line" ng-repeat="message in home.messages">
+		<div class="message-line" ng-repeat="message in $ctrl.messages">
 			<h4 class="sender-name">
 				{{ message.username }}
-				<small>(Sent at {{ message.sentAt }} in Room {{ message.roomId }})</small>
+				<small>(Sent at {{ message.sentAt }})</small>
 			</h4>
 			<p class="message-text">{{message.content}}</p>
 		</div>
