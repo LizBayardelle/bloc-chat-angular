@@ -13,7 +13,6 @@
         + currentTime.getMinutes() + ":" + currentTime.getSeconds() + " on "
         + currentTime.getDay() + "/"+currentTime.getMonth()
         + "/" + currentTime.getFullYear();
-      console.log(datetime);
       messages.$add({
         content: newMessage,
         roomId: roomId,

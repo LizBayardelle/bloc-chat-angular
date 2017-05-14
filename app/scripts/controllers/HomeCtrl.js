@@ -13,10 +13,12 @@
       $ctrl.changeRoom = function(room) {
         $ctrl.currentRoom = room;
         $ctrl.messages = Message.messagesByRoom(room.$id);
+        $ctrl.roomExists = true
       }
 
       $ctrl.send = function() {
         Message.send($ctrl.message, $ctrl.currentRoom.$id)
+        $ctrl.message = null;
       }
 
       $ctrl.ok = function () {

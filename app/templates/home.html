@@ -4,9 +4,7 @@
 
 		<button ng-click="$ctrl.openAddRoom()">Add New Room</button>
 		<div ng-repeat="room in $ctrl.rooms">
-			<h3 ng-click="$ctrl.changeRoom(room)">
-			{{ room.$value }}
-		</h3>
+			<h3 ng-click="$ctrl.changeRoom(room)">{{ room.$value }}</h3>
 		</div> <!-- ng repeat -->
 	</div> <!-- left-panel -->
 
@@ -17,7 +15,7 @@
 		<div class="header-stuff">
 			<h1 class="text-center">{{ $ctrl.currentRoom.$value }}</h1>
 
-			<div class="new-message">
+			<div class="new-message" ng-show="$ctrl.roomExists">
 	        	<p><small>Write a new message:</small></p>
 	        	<input ng-model="$ctrl.message" type="text" name="message"/>
 	        	<button ng-click="$ctrl.send()">Send</button>
